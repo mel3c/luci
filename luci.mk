@@ -83,18 +83,15 @@ define findrev
     if git log -1 >/dev/null 2>/dev/null; then \
       set -- $$(git log -1 --format="%ct %h" --abbrev=7 -- $(if $(1),. ':(exclude)po',po)); \
       if [ -n "$$1" ]; then
-        secs="$$(($$1 % 86400))"; \
-        yday="$$(date --utc --date="@$$1" "+%y.%j")"; \
-        printf 'git-%s.%05d-%s' "$$yday" "$$secs" "$$2"; \
+        printf 'Git-%s' "$$2"; \
       else \
         echo "unknown"; \
       fi; \
     else \
       ts=$$(find . -type f $(if $(1),-not) -path './po/*' -printf '%T@\n' 2>/dev/null | sort -rn | head -n1 | cut -d. -f1); \
       if [ -n "$$ts" ]; then \
-        secs="$$(($$ts % 86400))"; \
         date="$$(date --utc --date="@$$ts" "+%y%m%d")"; \
-        printf '%s.%05d' "$$date" "$$secs"; \
+        printf '%s' "$$date"; \
       else \
         echo "unknown"; \
       fi; \
@@ -114,16 +111,7 @@ PKG_PO_VERSION?=$(if $(DUMP),x,$(strip $(call findrev)))
 PKG_SRC_VERSION?=$(if $(DUMP),x,$(strip $(call findrev,1)))
 
 PKG_GITBRANCH?=$(if $(DUMP),x,$(strip $(shell \
-	variant="LuCI"; \
-	if git log -1 >/dev/null 2>/dev/null; then \
-		branch=$$(git branch --format='%(refname:strip=3)' --remote --no-abbrev --contains 2>/dev/null | tail -n1); \
-		branch=$${branch:-$$(git branch --format='%(refname:strip=2)' --no-abbrev --contains 2>/dev/null | tail -n1)}; \
-		if [ "$$branch" != "master" ]; then \
-			variant="LuCI $${branch:-unknown} branch"; \
-		else \
-			variant="LuCI Master"; \
-		fi; \
-	fi; \
+	variant="LuCI Package"; \
 	echo "$$variant" \
 )))
 
