@@ -90,9 +90,7 @@ end
 
 local container_list = get_containers()
 
-m = SimpleForm("docker",
-	translate("Docker - Containers"),
-	translate("This page displays all containers that have been created on the connected docker host."))
+m = SimpleForm("docker", translate("Docker - Containers"))
 m.submit=false
 m.reset=false
 

@@ -18,9 +18,7 @@ function byte_format(byte)
 	end
 end
 
-m = SimpleForm("dockerd",
-	translate("Docker - Overview"),
-	translate("An overview with the relevant data is displayed here with which the LuCI docker client is connected."))
+m = SimpleForm("dockerd", translate("Docker - Overview"))
 m.submit=false
 m.reset=false
 

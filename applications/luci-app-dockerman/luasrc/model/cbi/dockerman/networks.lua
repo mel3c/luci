@@ -47,9 +47,7 @@ end
 
 local network_list = get_networks()
 
-m = SimpleForm("docker",
-	translate("Docker - Networks"),
-	translate("This page displays all docker networks that have been created on the connected docker host."))
+m = SimpleForm("docker", translate("Docker - Networks"))
 m.submit=false
 m.reset=false
 

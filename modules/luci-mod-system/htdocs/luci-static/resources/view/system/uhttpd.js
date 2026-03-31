@@ -6,7 +6,7 @@ return view.extend({
 	render: function() {
 		var m, s, o;
 
-		m = new form.Map('uhttpd', _('HTTP(S) Access'), _('uHTTPd offers <abbr title="Hypertext Transfer Protocol">HTTP</abbr> or <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> network access.'));
+		m = new form.Map('uhttpd', _('HTTP(S) Access'));
 
 		s = m.section(form.NamedSection, 'main', 'uhttpd', _('Settings'));
 		s.addremove = false;

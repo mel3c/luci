@@ -3,8 +3,7 @@
 
 local fs = require("nixio.fs")
 
-local m = Map("uhttpd", translate("Web Admin Settings"),
-	      translate("Web Admin Settings Page"))
+local m = Map("uhttpd", translate("Web Admin Settings"))
 
 local ucs = m:section(TypedSection, "uhttpd")
 ucs.addremove = false

@@ -35,8 +35,7 @@ return view.extend({
 		    m, s, o, inp, out;
 		var fw4 = L.hasSystemFeature('firewall4');
 
-		m = new form.Map('firewall', _('Firewall - Zone Settings'),
-			_('The firewall creates zones over your network interfaces to control network traffic flow.'));
+		m = new form.Map('firewall', _('Firewall - Zone Settings'));
 
 		s = m.section(form.TypedSection, 'defaults', _('General Settings'));
 		s.anonymous = true;

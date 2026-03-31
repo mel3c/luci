@@ -68,9 +68,7 @@ end
 
 local image_list = get_images()
 
-m = SimpleForm("docker",
-	translate("Docker - Images"),
-	translate("On this page all images are displayed that are available on the system and with which a container can be created."))
+m = SimpleForm("docker", translate("Docker - Images"))
 m.submit=false
 m.reset=false
 

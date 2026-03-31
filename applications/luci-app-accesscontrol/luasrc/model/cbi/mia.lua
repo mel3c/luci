@@ -1,6 +1,5 @@
-
-a = Map("mia", translate("Internet Access Schedule Control"), translate("Access Schedule Control Settins"))
-a:section(SimpleSection).template  = "mia/mia_status"
+a = Map("mia", translate("Internet Access Schedule Control"))
+a:section(SimpleSection).template = "mia/mia_status"
 
 t = a:section(TypedSection, "basic")
 t.anonymous = true
@@ -23,8 +22,8 @@ e.default = "1"
 
 e = t:option(Value, "macaddr", translate("MAC address (Computer Name)"))
 e.rmempty = true
-luci.sys.net.mac_hints(function(t,a)
-e:value(t,"%s (%s)"%{t,a})
+luci.sys.net.mac_hints(function(t, a)
+	e:value(t, "%s (%s)" % { t, a })
 end)
 
 e = t:option(Value, "timeon", translate("Start time"))

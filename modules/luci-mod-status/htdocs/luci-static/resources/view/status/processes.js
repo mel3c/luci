@@ -62,7 +62,7 @@ return view.extend({
 	render: function(processes) {
 		var v = E([], [
 			E('h2', _('Processes')),
-			E('div', { 'class': 'cbi-map-descr' }, _('This list gives an overview over currently running system processes and their status.')),
+			E('div', { 'class': 'cbi-map-descr' }),
 
 			E('table', { 'class': 'table' }, [
 				E('tr', { 'class': 'tr table-titles' }, [

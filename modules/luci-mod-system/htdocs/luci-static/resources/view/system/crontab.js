@@ -26,7 +26,7 @@ return view.extend({
 	render: function(crontab) {
 		return E([
 			E('h2', _('Scheduled Tasks')),
-			E('p', { 'class': 'cbi-section-descr' }, _('This is the system crontab in which scheduled tasks can be defined.')),
+			E('p', { 'class': 'cbi-section-descr' }),
 			E('p', {}, E('textarea', { 'style': 'width:100%', 'rows': 25, 'disabled': isReadonlyView }, [ crontab != null ? crontab : '' ]))
 		]);
 	},

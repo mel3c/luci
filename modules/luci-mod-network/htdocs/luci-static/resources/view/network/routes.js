@@ -25,7 +25,7 @@ return view.extend({
 			return e && e[0] > 0;
 		});
 
-		m = new form.Map('network', _('Routing'), _('Routing defines over which interface and gateway a certain host or network can be reached.'));
+		m = new form.Map('network', _('Routing'));
 		m.tabbed = true;
 
 		for (var family = 4; family <= 6; family += 2) {

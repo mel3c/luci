@@ -6,8 +6,7 @@ return view.extend({
 	render: function () {
 		var m, s, o;
 
-		m = new form.Map('udpxy', _('udpxy'),
-			_('udpxy is a UDP-to-HTTP multicast traffic relay daemon, here you can configure the settings.'));
+		m = new form.Map('udpxy', _('udpxy'));
 
 		s = m.section(form.TypedSection, 'udpxy');
 		s.anonymous = true;

@@ -109,9 +109,7 @@ return view.extend({
 		    localtime = rpc_replies[2],
 		    m, s, o;
 
-		m = new form.Map('system',
-			_('System'),
-			_('Here you can configure the basic aspects of your device like its hostname or the timezone.'));
+		m = new form.Map('system', _('System'));
 
 		m.chain('luci');
 

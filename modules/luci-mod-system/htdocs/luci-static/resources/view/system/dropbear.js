@@ -7,7 +7,7 @@ return view.extend({
 	render: function() {
 		var m, s, o;
 
-		m = new form.Map('dropbear', _('SSH Access'), _('Dropbear offers <abbr title="Secure Shell">SSH</abbr> network shell access and an integrated <abbr title="Secure Copy">SCP</abbr> server'));
+		m = new form.Map('dropbear', _('SSH Access'));
 
 		s = m.section(form.TypedSection, 'dropbear', _('Dropbear Instance'));
 		s.anonymous = true;

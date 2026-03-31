@@ -1,7 +1,6 @@
 require("luci.sys")
 
 m = Map("autoreboot", translate("Scheduled Reboot"))
-m.description = translate("Scheduled reboot Setting")
 
 s = m:section(TypedSection, "login")
 s.addremove = false
